@@ -1,0 +1,22 @@
+User Controllers
+registerUser: Handles user registration with input validation, password hashing, and profile creation.
+loginUser: Authenticates users, issues a JWT or session token.
+getUserProfile: Retrieves user details and profile data.
+updateUserProfile: Updates profile information like bio or rating.
+Auction Controllers
+createAuction: Allows a user to create a new auction with details like title, description, starting bid, reserve price, buy-now price, and end time.
+getAllAuctions: Fetches all active auctions with filters for search or sorting (e.g., price, end time).
+getAuctionById: Fetches details of a single auction, including current bid, description, end time, and list of bids.
+updateAuctionStatus: Automatically or manually updates auction status (e.g., mark as ENDED or COMPLETED).
+deleteAuction: Allows a user to delete an auction they created, if there are no active bids.
+Bid Controllers
+placeBid: Validates and places a new bid, updating the auction's current bid and checking against any reserve price.
+getBidsForAuction: Retrieves all bids for a specific auction, showing bid history.
+getUserBids: Shows all bids placed by a specific user across auctions.
+Notification Controllers
+getNotifications: Retrieves a list of notifications for a user, such as outbid alerts or auction end notifications.
+markNotificationAsRead: Marks a notification as read by the user.
+createNotification (internal function): Creates and stores a notification, triggered by events like a new highest bid or auction ending.
+Additional Optional Controllers
+buyNow: If the auction has a buyNowPrice, this controller allows the user to immediately purchase the item, ending the auction.
+adminGetAllUsers: For admin access to view user accounts, auctions, and bids for moderation purposes.
